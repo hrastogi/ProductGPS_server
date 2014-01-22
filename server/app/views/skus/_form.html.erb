@@ -1,0 +1,68 @@
+<%= form_for(@sku) do |f| %>
+  <% if @sku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sku.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @sku.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :img_url %><br />
+    <%= f.text_field :img_url %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  
+  <div>
+	  <%= f.fields_for :store do |s| %>
+	  <div class="field">
+	    <%= s.label :store_name %><br />
+	    <%= s.text_field :name %>
+	  </div>
+	  <div class="field">
+	    <%= s.label :retailer %><br />
+	    <%= s.text_field :retailer %>
+	  </div>
+	  <div class="field">
+	    <%= s.label :address %><br />
+	    <%= s.text_field :address %>
+	  </div>
+		 
+	  <% end %>
+  </div>
+  <div>
+	  <%= f.fields_for :location do |l| %>
+ 	  	<div class="field">
+				<%= l.label :longitude %><br />
+				<%= l.text_field :lon %>
+		</div>
+		<div class="field">
+				<%= l.label :latitude %><br />
+				<%= l.text_field :lat %>
+			</div>
+		<% end %>	
+	</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

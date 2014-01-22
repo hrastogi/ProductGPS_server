@@ -1,0 +1,18 @@
+development:
+  host: 127.0.0.1
+  port: 27017
+  options:
+    w: 1
+    pool_size: 1
+    slave_ok: false
+    ssl: false
+  database: inventory
+
+test:
+  database: elasticsearch_test
+  w: 0
+
+# set these environment variables on your prod server
+production:
+  # uri: "mongodb://heroku:98c5cda86a415d31782d64f60c6ee23e@paulo.mongohq.com:10085/app20946057"
+  # database: inventory
