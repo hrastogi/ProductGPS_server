@@ -1,0 +1,16 @@
+development:
+  host: 127.0.0.1
+  port: 27017
+  options:
+    w: 1
+    pool_size: 1
+    slave_ok: false
+    ssl: false
+  database: inventory
+
+test:
+  database: elasticsearch_test
+  w: 0
+
+# set these environment variables on your prod server
+production:
