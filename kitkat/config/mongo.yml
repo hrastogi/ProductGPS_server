@@ -12,5 +12,9 @@ test:
   database: elasticsearch_test
   w: 0
 
+<<<<<<< HEAD
 #sds set these environment variables on your prod server
+=======
+# set these environment variables on your prod server
+>>>>>>> 02eccc964274afd718a2c34a686122a44c550db5
 production:
