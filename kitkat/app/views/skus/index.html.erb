@@ -1,0 +1,46 @@
+<h1>Listing items</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Description</th>
+    <th>Size</th>
+    <th>Color</th>
+    <th>Img url</th>
+    <th>Gender</th>
+	 <!-- <th>Store name</th>
+	 <th>Retailer</th>	 
+	 <th>Address</th>	 --> 
+	 <th>Longitude</th>	 
+	 <th>Latitude</th>	 	 	 
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @skus.each do |item| %>
+  <tr>
+    <td><%= item.description %></td>
+    <td><%= item.size %></td>
+    <td><%= item.color %></td>
+    <td><%= item.img_url %></td>
+    <td><%= item.gender %></td>
+
+	 <td><%= item.location['lon']%></td>
+	 <td><%= item.location['lat'] %></td>	 	 
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_sku_path(item) %></td>
+    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= form_tag skus_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= label_tag :distance %>	 	 
+    <%= text_field_tag :distance, params[:distance] %>&nbsp;kms	 
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+<%= link_to 'New SKU', new_sku_path %>

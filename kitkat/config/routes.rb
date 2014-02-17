@@ -1,4 +1,7 @@
 Kitkat::Application.routes.draw do
+  resources :skus
+
+
   resources :categories
 
 

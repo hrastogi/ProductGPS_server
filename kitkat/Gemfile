@@ -20,12 +20,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "mongo_mapper" , :git => "git://github.com/mongomapper/mongomapper.git"
+gem "mongo_mapper" 
 gem 'tire'
 gem  'mongo'
  gem  'bson_ext'
  
-
+gem 'tire-contrib'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,20 +1,25 @@
+# defaults: &defaults
+#   host: 127.0.0.1
+#   port: 27017
+#   options:
+#     w: 1
+#     pool_size: 1
+#     slave_ok: false
+#     ssl: false
+
 development:
-  host: 127.0.0.1
-  port: 27017
-  options:
-    w: 1
-    pool_size: 1
-    slave_ok: false
-    ssl: false
-  database: inventory
+  # <<: *defaults
+  database: kitkat_development
 
 test:
-  database: elasticsearch_test
+  # <<: *defaults
+  database: kitkat_test
   w: 0
 
-<<<<<<< HEAD
-#sds set these environment variables on your prod server
-=======
 # set these environment variables on your prod server
->>>>>>> 02eccc964274afd718a2c34a686122a44c550db5
 production:
+  # <<: *defaults
+   database: kitkat
+   uri: "mongodb://heroku:a0254619049149873ad95bdffa97429a@troup.mongohq.com:10061/app22276860"
+   
+   #"<%= ENV['MONGOHQ_URL'] %>"
